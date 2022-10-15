@@ -10,9 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_15_171104) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_15_210127) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "appointments", force: :cascade do |t|
+    t.date "date"
+    t.bigint "pet_id", null: false
+    t.bigint "vet_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pet_id"], name: "index_appointments_on_pet_id"
+    t.index ["vet_id"], name: "index_appointments_on_vet_id"
+  end
+
+  create_table "owner_records", force: :cascade do |t|
+    t.bigint "pet_id", null: false
+    t.string "description"
+    t.string "type"
+    t.date "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pet_id"], name: "index_owner_records_on_pet_id"
+  end
+
+  create_table "pets", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id", null: false
+    t.string "gender"
+    t.date "birthdate"
+    t.string "specie"
+    t.string "breed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_pets_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,6 +56,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_15_171104) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "vet_records", force: :cascade do |t|
+    t.date "date"
+    t.bigint "appointment_id", null: false
+    t.string "type"
+    t.date "followup_date"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["appointment_id"], name: "index_vet_records_on_appointment_id"
   end
 
   create_table "vets", force: :cascade do |t|
@@ -38,4 +81,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_15_171104) do
     t.index ["reset_password_token"], name: "index_vets_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "appointments", "pets"
+  add_foreign_key "appointments", "vets"
+  add_foreign_key "owner_records", "pets"
+  add_foreign_key "pets", "users"
+  add_foreign_key "vet_records", "appointments"
 end
