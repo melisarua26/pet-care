@@ -1,0 +1,90 @@
+ <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.104.2">
+    <title>Navbar Template · Bootstrap v5.2</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/navbars-offcanvas/">
+
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+ <link href="navbar.css" rel="stylesheet">
+  </head>
+  <body>
+
+<main>
+  <nav class="navbar navbar-dark bg-dark" aria-label="Dark offcanvas navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Petcare</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarDark" aria-controls="offcanvasNavbarDark">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbarDark" aria-labelledby="offcanvasNavbarDarkLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarDarkLabel">Menu</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Mi Perfil
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Editar mi perfil</a></li>
+                <hr class="dropdown-divider">
+                 <li><a class="dropdown-item" href="#">Editar mi perfil</a></li>
+                 <hr class="dropdown-divider">
+                 <li><a class="dropdown-item" href="#">Por definir</a></li>
+              </ul>
+            </li>
+          </ul>
+         <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Mi mascotas
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Editar mis mascotas</a></li>
+                  <hr class="dropdown-divider">
+                <li><a class="dropdown-item" href="#">Agregar mascotas</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Por definir</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Mi citas
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Nueva cita</a></li>
+                  <hr class="dropdown-divider">
+                <li><a class="dropdown-item" href="#">Editar mis citas</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Por definir</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex mt-3" role="search">
+            <input class="form-control me-2" type="search" placeholder="¿Que deseas buscar?" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </nav>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
