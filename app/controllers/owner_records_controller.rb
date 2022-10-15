@@ -1,0 +1,2 @@
+class OwnerRecordsController < ApplicationController
+end
