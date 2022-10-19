@@ -1,9 +1,10 @@
 <div class="form">
-  <%= simple_form_for(pet) do |f| %>
+  <%= simple_form_for(@pet) do |f| %>
     <%= f.input :name %>
-    <%= f.input :country %>
-    <%= f.input :address %>
-    <%= f.input :description %>
+    <%= f.input :gender %>
+    <%= f.input :birthdate %>
+    <%= f.input :specie %>
+    <%= f.input :breed %>
     <%= f.input :photo, as: :file %>
     <%= f.submit %>
   <% end %>

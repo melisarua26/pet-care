@@ -1,9 +1,9 @@
 <h1 class="text-center d-flex justify-content-center"></h1>
-<div id="places" class="container">
+<div id="pets" class="container">
   <div class="row">
-    <% @places.each do |place| %>
+    <% @pets.each do |pet| %>
     <div class="col-md-6 col-lg-4">
-      <%= render 'place', locals: { place: place } %>
+      <%= render 'pet', locals: { pet: pet } %>
     </div>
     <% end %>
   </div>

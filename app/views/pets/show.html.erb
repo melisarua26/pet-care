@@ -1,0 +1,17 @@
+<div class="container justify-content center">
+  <%# <%= cl_image_tag locals[:place].photo.key, height: 400, width: 600, crop: :fill %>
+  <%#= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %>
+
+  <h2><%= @pet.name %></h2>
+  <p><%#= ISO3166::Country[@pet.country].common_name
+ %></p>
+  <p><%= @pet.gender %></p>
+  <p><%= @pet.breed %></p>
+  <p>Owner: <%= @pet.user.email %></p>
+<div class="btn-group" role="group" aria-label="Basic example">
+  <%= button_to "Back to your profile", users_path, method: :get, class: "btn btn-primary" %>
+  <%= button_to "Edit pet", edit_pet_path(@pet), method: :get, class: "btn btn-primary" %>
+  <%= button_to "Delete pet",  pet_path(@pet), method: :delete, class: "btn btn-primary", data: {turbo_confirm: "Estas seguro de dar de baja a tu mascota?"} %>
+  <%#= link_to "Reservar", (@pet), class: "btn btn-primary"  %>
+  <%# TODO: el boton de 'Reservar' no funciona, por lo que se debe agregar la funcionalidad :) %>
+</div>

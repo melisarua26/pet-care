@@ -3,11 +3,11 @@
     <%= cl_image_tag locals[:place].photo.key, height: 185, class:"card-image-top" %>
     <div class="card-body">
       <h3 class="card-title"><%= link_to(locals[:pet].name, locals[:pet], class:"text-secondary")%></h3>
-      <p class="card-text"><strong>Country:</strong>
-      <%= locals[:pet].country_name %></p>
-      <p class="card-text"><strong>Address:</strong>
-      <%= locals[:place].address %></p>
-      <p class="card-text"><strong>Description:</strong>
-      <%= locals[:place].description %></p>
+      <p class="card-text"><strong>Gender:</strong>
+      <%= locals[:pet].gender %></p>
+      <p class="card-text"><strong>Birthdate:</strong>
+      <%= locals[:place].specie %></p>
+      <p class="card-text"><strong>Breed:</strong>
+      <%= locals[:place].breed %></p>
     </div>
 </div>
