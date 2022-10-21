@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :pets
   resources :vets
   resources :appointments
+  resources :owner_record
+  resources :vet_record
   # Defines the root path route ("/")
   # root "articles#index"
 end

@@ -13,5 +13,5 @@
   <%= button_to "Edit pet", edit_pet_path(@pet), method: :get, class: "btn btn-primary" %>
   <%= button_to "Eliminar",  pet_path(@pet), method: :delete, class: "btn btn-primary", data: {turbo_confirm: "Estas seguro?"} %>
   <%#= link_to "Reservar", (@pet), class: "btn btn-primary"  %>
-
+  <%# TODO: el boton de 'Reservar' no funciona, por lo que se debe agregar la funcionalidad :) %>
 </div>
