@@ -1,0 +1,10 @@
+<h1 class="text-center d-flex justify-content-center"></h1>
+<div id="pets" class="container">
+  <div class="row">
+    <% @pets.each do |pet| %>
+    <div class="col-md-6 col-lg-4">
+      <%= render 'pet', locals: { pet: pet } %>
+    </div>
+    <% end %>
+  </div>
+</div>
