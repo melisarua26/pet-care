@@ -2,16 +2,16 @@
   <%# <%= cl_image_tag locals[:place].photo.key, height: 400, width: 600, crop: :fill %>
   <%#= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %>
 
-  <h2><%= @o_record.name %></h2>
+  <h2><%= @owner_record.name %></h2>
   <p><%#= ISO3166::Country[@pet.country].common_name
  %></p>
-  <p><%= @o_record.gender %></p>
-  <p><%= @o_record.breed %></p>
-  <p>Owner: <%= @o_record.user.email %></p>
+  <p><%= @owner_record.gender %></p>
+  <p><%= @owner_record.breed %></p>
+  <p>Owner: <%= @owner_record.user.email %></p>
 <div class="btn-group" role="group" aria-label="Basic example">
-  <%= button_to "Back to pets", pet_path, method: :get, class: "btn btn-primary" %>
-  <%= button_to "Edit pet", edit_pet_path(@pet), method: :get, class: "btn btn-primary" %>
-  <%= button_to "Eliminar",  pet_path(@pet), method: :delete, class: "btn btn-primary", data: {turbo_confirm: "Estas seguro?"} %>
+  <%= button_to "Back to records", pet_path, method: :get, class: "btn btn-primary" %>
+  <%= button_to "Edit record", edit_owner_record_path(@owner_record), method: :get, class: "btn btn-primary" %>
+  <%= button_to "Eliminar",  owner_record_path(@owner_record), method: :delete, class: "btn btn-primary", data: {turbo_confirm: "Estas seguro?"} %>
   <%#= link_to "Reservar", (@pet), class: "btn btn-primary"  %>
   <%# TODO: el boton de 'Reservar' no funciona, por lo que se debe agregar la funcionalidad :) %>
 </div>

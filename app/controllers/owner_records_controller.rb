@@ -13,9 +13,9 @@ class OwnerRecordsController < ApplicationController
   end
 
   def create
-    @o_record = OwnerRecord.new(pet_params)
-    @o_record.user = current_user
-    if @o_record.save
+    @owner_record = OwnerRecord.new(pet_params)
+    @owner_record.user = current_user
+    if @owner_record.save
       redirect_to owner_record_index(@o_record)
     else
       render :new
@@ -23,17 +23,17 @@ class OwnerRecordsController < ApplicationController
   end
 
   def edit
-    redirect_to owner_record_index unless @o_record.user == current_user
+    redirect_to owner_record_index unless @owner_record.user == current_user
   end
 
   def update
-    @o_record = OwnerRecord.find(params[:id])
-    @o_record.update(place_params)
-    redirect_to pet_path(@o_record)
+    @owner_record = OwnerRecord.find(params[:id])
+    @owner_record.update(place_params)
+    redirect_to pet_path(@owner_record)
   end
 
   def destroy
-    @pet.destroy
+    @owner_record.destroy
     redirect_to owner_records_path
   end
 
@@ -44,7 +44,7 @@ class OwnerRecordsController < ApplicationController
   end
 
   def set_place
-    @o_record = OwnerRecord.find(params[:id])
+    @owner_record = OwnerRecord.find(params[:id])
   end
 
 end
