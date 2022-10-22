@@ -16,7 +16,7 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.new(appointment_params)
     @appointment.user = current_user
     if @appointment.save
-      redirect_to pet_path(@appointment)
+      redirect_to  appointment_path(@appointment)
     else
       render :new
     end
