@@ -1,0 +1,10 @@
+<h1 class="text-center d-flex justify-content-center"></h1>
+<div id="owner_records" class="container">
+  <div class="row">
+    <% @o_records.each do |record| %>
+    <div class="col-md-6 col-lg-4">
+      <%= render 'owner_records', locals: { owner_record: owner_record } %>
+    </div>
+    <% end %>
+  </div>
+</div>
