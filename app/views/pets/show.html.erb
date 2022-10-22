@@ -13,6 +13,6 @@
   <%= button_to "Back to pets", pets_path, method: :get, class: "btn btn-primary" %>
   <%= button_to "Edit pet", edit_pet_path(@pet), method: :get, class: "btn btn-primary" %>
   <%= button_to "Eliminar", @pet, method: :delete, class: "btn btn-primary", data: {turbo_confirm: "Estas seguro?"} %>
-  <%= link_to "Crear nueva cita", edit_pet_path(@pet)(), class: "btn btn-primary"  %>
+  <%= link_to "Crear nueva cita", new_appointment(@appointment), class: "btn btn-primary"  %>
 
 </div>

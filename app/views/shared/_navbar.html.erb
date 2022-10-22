@@ -18,7 +18,7 @@
 <main>
   <nav class="navbar navbar-dark bg-dark" aria-label="Dark offcanvas navbar">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Petcare</a>
+      <a class="navbar-brand" href="root_path">Petcare</a>
 
 
 <div class="dropdown">
@@ -26,9 +26,9 @@
     Iniciar sesión </button>
 
   <div class="dropdown-menu" aria-labelledby="Iniciar sesión">
-    <a class="dropdown-item" href="#">Iniciar sesión Usuario </a>
-    <a class="dropdown-item" href="#">Iniciar sesión Vet </a>
-    <a class="dropdown-item" href="#">Cerrar sesión</a>
+    <a class="dropdown-item" href="new_user_session_path">Iniciar sesión como Propietario</a>
+    <a class="dropdown-item" href="new_vet_session_path">Iniciar sesión como Vet </a>
+    <a class="dropdown-item" href="destroy_vet_session_path">Cerrar sesión</a>
   </div>
 
 
@@ -69,11 +69,9 @@
                 Mi mascotas
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Ver mis mascotas</a></li>
+                <li><%= link_to "Ver mis mascotas", pets_path %></li>
                 <hr class="dropdown-divider">
-                <li><a class="dropdown-item" href="#">Editar mis mascotas</a></li>
-                <hr class="dropdown-divider">
-                 <li><a class="dropdown-item" href="#">Agregar mascotas</a></li>
+                 <li><%= link_to "Agregar mascotas", new_pet_path %></li>
               </ul>
             </li>
           </ul>
