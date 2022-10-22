@@ -1,5 +1,5 @@
 class PetsController < ApplicationController
-  before_action :set_pet, only: :edit
+  before_action :set_pet, only: [:show, :edit, :update, :destroy]
 
   def index
     @pets = Pet.all
@@ -29,8 +29,13 @@ class PetsController < ApplicationController
 
   def update
     @pet = Pet.find(params[:id])
-    @pet.update(place_params)
+    @pet.update(pet_params)
     redirect_to pet_path(@pet)
+  end
+
+  def destroy
+    @pet.destroy
+    redirect_to pets_path
   end
 
   private
