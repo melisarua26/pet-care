@@ -32,10 +32,15 @@ class OwnerRecordsController < ApplicationController
     redirect_to pet_path(@o_record)
   end
 
+  def destroy
+    @pet.destroy
+    redirect_to owner_records_path
+  end
+
   private
 
   def owner_record_params
-    params.require(:owner_record).permit(:description, :type, :photo)
+    params.require(:o_record).permit(:description, :type, :date, :photo)
   end
 
   def set_place
