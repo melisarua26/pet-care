@@ -40,7 +40,14 @@ class Vets::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+ protected
+
+ protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:email, :password, :password_confirmation, :name, :surname, :address, :telephone_number, :city, :country, :cc) }
+    devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:email, :password, :password_confirmation, :name, :surname, :description, :specialty, :city, :country, :cc) }
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params

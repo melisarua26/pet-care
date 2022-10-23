@@ -38,6 +38,9 @@ class PetsController < ApplicationController
     redirect_to pets_path
   end
 
+  def devise_controller
+  end
+
   private
 
   def pet_params
