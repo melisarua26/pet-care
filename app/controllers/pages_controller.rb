@@ -5,4 +5,10 @@ class PagesController < ApplicationController
 
   def profile
   end
+
+  def vet_profile
+  end
+
+  def devise_controller
+  end
 end
