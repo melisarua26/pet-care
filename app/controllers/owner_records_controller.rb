@@ -37,6 +37,9 @@ class OwnerRecordsController < ApplicationController
     redirect_to owner_records_path
   end
 
+  def devise_controller
+  end
+
   private
 
   def owner_record_params
