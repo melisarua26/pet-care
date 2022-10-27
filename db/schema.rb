@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_22_214650) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_22_211350) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -74,13 +74,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_22_214650) do
     t.index ["user_id"], name: "index_pets_on_user_id"
   end
 
-  create_table "profiles", force: :cascade do |t|
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_profiles_on_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -129,6 +122,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_22_214650) do
   add_foreign_key "appointments", "vets"
   add_foreign_key "owner_records", "pets"
   add_foreign_key "pets", "users"
-  add_foreign_key "profiles", "users"
   add_foreign_key "vet_records", "appointments"
 end
