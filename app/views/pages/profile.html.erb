@@ -1,40 +1,43 @@
 <%= current_user.name %>
 <% pets = Pet.where(user_id: current_user.id) %>
-<% pets.each do |pet | %>
-<%= pet.name%>
-<% end %>
-<h1> Bienvenidos"NombreUsuario" </h1>
+
+<div class="container">
+  <h3> Hola <%= current_user.email %></h3>
+  <h4>¿Que deseas registrar hoy?</h4>
+
+
+  <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <% pets.each do |pet | %>
+
+
+        <div class="col-md-6">
+          <div class="card" style="width: 18rem;">
+            <img src="https://images.unsplash.com/photo-1506551109886-6101f48c1ab9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" class="card-img-top mx-auto rounded-circle w-75" alt="">
+            <div class="card-body">
+              <h5 class="card-title"><%= pet.name%></h5>
+              <div class='d-flex justify-content-between' >
+                <p class="card-text"> Género <i class="fa-solid fa-transgender"></i><%= pet.gender%></p>
+                <p class="card-text"> Género <i class="fa-solid fa-transgender"></i><%= pet.gender%></p>
+              </div>
+              <div class='d-flex justify-content-between' >
+                <p class="card-text"> Género <i class="fa-solid fa-transgender"></i><%= pet.gender%></p>
+                <p class="card-text"> Género <i class="fa-solid fa-transgender"></i><%= pet.gender%></p>
+              </div>
+              <div class='d-flex justify-content-between' >
+                <p class="card-text"> Género <i class="fa-solid fa-transgender"></i><%= pet.gender%></p>
+                <p class="card-text"> Género <i class="fa-solid fa-transgender"></i><%= pet.gender%></p>
+              </div>
+              <a href="#" class="btn btn-warning w-100">Crear cita</a>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
 
 
 
-<div class="card-group">
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1506551109886-6101f48c1ab9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Mía</h5>
-      <p class="card-text">Descripción de la mascota</p>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
-    </div>
-  </div>
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1596854273338-cbf078ec7071?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Oggy</h5>
-      <p class="card-text">Descripción de la mascota</p>
-    <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
-    </div>
-  </div>
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1599765625577-61a6e65e3567?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=553&q=80" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Perla</h5>
-      <p class="card-text">Descripción de la mascota</p>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
-    </div>
-  </div>
-</div>
+
+
+<img src="https://images.unsplash.com/photo-1499887142886-791eca5918cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" class="card-img-top rounded-circle w-25" alt="...">
