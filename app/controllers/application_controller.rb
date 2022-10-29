@@ -3,7 +3,9 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller
 
-  def devise_controller
-  end
+ # before_action :configure_permitted_parameters, if: :devise_controller
+
+ def devise_controller
+ end
 
 end
