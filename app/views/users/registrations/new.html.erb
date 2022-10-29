@@ -7,12 +7,9 @@
         <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
           <div class="card-body p-4 p-md-5">
 <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registrate</h3>
-
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
-
   <div class="form-inputs">
-
     <%= f.input :email,
                 required: true,
                 autofocus: true,
@@ -52,10 +49,8 @@
                 required: false,
                 autofocus: true,
                 input_html: { autocomplete: "cc" }%>
-
   </div>
   <div class="form-actions">
           <%= f.button :submit, "Sign up", class: "btn-primary" %>
         </div>
-
 <% end %>
