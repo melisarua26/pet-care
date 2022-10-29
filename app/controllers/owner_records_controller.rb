@@ -1,7 +1,9 @@
 class OwnerRecordsController < ApplicationController
-
+  before_action :set_owner_record
+  skip_before_action :authenticate_user!
+  
   def index
-    @owner_record = OwnerRecord.all
+    @owner_records = OwnerRecord.all
   end
 
   def new
@@ -13,7 +15,7 @@ class OwnerRecordsController < ApplicationController
   end
 
   def create
-    @owner_record = OwnerRecord.new(pet_params)
+    @owner_record = OwnerRecord.new(owner_record_params)
     @owner_record.user = current_user
     if @owner_record.save
       redirect_to new_owner_record_path(@owner_record)
@@ -43,10 +45,10 @@ class OwnerRecordsController < ApplicationController
   private
 
   def owner_record_params
-    params.require(:o_record).permit(:description, :type, :date, :photo)
+    params.require(:owner_record).permit(:description, :type, :date, :photo)
   end
 
-  def set_place
+  def set_owner_record
     @owner_record = OwnerRecord.find(params[:id])
   end
 

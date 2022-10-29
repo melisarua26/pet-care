@@ -3,14 +3,6 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.104.2">
-    <title>Navbar Template · Bootstrap v5.2</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/navbars-offcanvas/">
-
-<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
  <link href="navbar.css" rel="stylesheet">
   </head>
@@ -19,7 +11,9 @@
   <nav class="navbar navbar-dark bg-dark" aria-label="Dark offcanvas navbar">
     <div class="container-fluid">
       <a class="navbar-brand" href="root_path">Petcare</a>
-
+    <% if signed_in?  %>
+    <%= current_user.email %>
+    <% end %>
 <% if !current_user%>
   <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
