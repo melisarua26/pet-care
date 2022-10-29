@@ -1,18 +1,13 @@
-  <div class= "card my-3">
-    <%# <%= cl_image_tag locals[:pet].photo.key, height: 400, width: 600, crop: :fill %> %>
-    <%# <%= cl_image_tag locals[:pet].photo.key, height: 185, class:"card-image-top" %> %>
-    <div class="card-body">
-      <%# <h3 class="card-title"><%= link_to(locals[:pet].name, locals[:pet], class:"text-secondary")</h3> %> %>
-      <p class="card-text"><strong>Gender:</strong>
 
-      <p><%= pet.gender %></p>
-      <p class="card-text"><strong>Birthdate:</strong>
-
-      <p><%= pet.birthdate %></p>
-      <p class="card-text"><strong>Breed:</strong>
-      <p><%= pet.breed %></p>
-
-      <p class="card-text"><strong>Owner</strong></p>
-      <p><%= pet.user.email%></p>
+<div class="card-trip">
+  <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y2F0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+  <div class="card-trip-infos">
+    <div>
+      <h2 class="card-title"><%= link_to(locals[:pet].name, locals[:pet], class:"text-secondary")%></h2>
+      <p><strong>Genero:</strong><%= locals[:pet].gender %></p>
+      <p><strong>Fecha de Nacimiento:</strong><%= locals[:pet].birthdate %></p>
     </div>
+    <h2 class="card-trip-pricing"><%= link_to(locals[:pet].name, locals[:pet], class:"text-secondary")%></h2></h2>
+    <p><strong>Especie:</strong><%= locals[:pet].specie %></p>
+  </div>
 </div>
