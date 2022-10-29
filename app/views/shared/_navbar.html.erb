@@ -56,7 +56,7 @@
               <ul class="dropdown-menu">
                 <li><%= link_to "Ver mi perfil", pages_profile_path %></li>
                 <hr class="dropdown-divider">
-
+                <li><%= link_to "Editar mi perfil", edit_user_registration_path %></li>
                 <li><a class="dropdown-item" href="#">Editar mi perfil</a></li>
 
               </ul>
@@ -87,10 +87,13 @@
                 <li><a class="dropdown-item" href="#">Editar mis citas</a></li>
                 <hr class="dropdown-divider">
                  <li><a class="dropdown-item" href="#">Agregar citas</a></li>
+
               </ul>
+              <% if user_signed_in? %>
               <ul>
-               <button type="button" class="btn btn-dark">Cerrar sesion</button class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                <%= button_to "Cerrar Sesión", destroy_user_session_path, method: :delete, form: {  data: { turbo: :false } }, class: "btn btn-dark" %>
               </ul>
+              <% end %>
             </li>
           </ul>
         </div>
