@@ -6,12 +6,12 @@ class Vets::SessionsController < Devise::SessionsController
   skip_before_action :check_user, only: :destroy
   # GET /resource/sign_in
   # def new
-  #   super
+  # super
   # end
 
   # POST /resource/sign_in
   # def create
-  #   super
+  # super
   # end
 
   # DELETE /resource/sign_out
