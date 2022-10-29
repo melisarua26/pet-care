@@ -3,10 +3,6 @@
   <%#= locale["pet"].inspect%>
   <%#= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %>
   <h2><%= @pet.name %></h2>
-
- <!--
- <p><%= ISO3166::Country[@pet.country].common_name%></p> -->
-
   <p><%= @pet.gender %></p>
   <p><%= @pet.breed %></p>
   <p>Owner: <%= @pet.user.email %></p>
