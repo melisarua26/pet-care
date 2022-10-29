@@ -89,10 +89,11 @@
                  <li><a class="dropdown-item" href="#">Agregar citas</a></li>
 
               </ul>
+              <% if user_signed_in? %>
               <ul>
-          
-                <%= button_to "Cerrar Sesión", destroy_user_session_path, method: :delete, form: {  data: { turbo: :false } }, class: "" %>
+                <%= button_to "Cerrar Sesión", destroy_user_session_path, method: :delete, form: {  data: { turbo: :false } }, class: "btn btn-dark" %>
               </ul>
+              <% end %>
             </li>
           </ul>
         </div>
