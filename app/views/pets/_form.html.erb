@@ -1,12 +1,34 @@
+<div class="container">
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-4 p-md-5">
+          <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registrar mascotas</h3>
 <div class="container form">
   <%= simple_form_for(@pet) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :gender %>
-    <%= f.input :birthdate %>
-    <%= f.input :specie %>
-    <%= f.input :breed %>
-    <%= f.input :photo, as: :file %>
+    <%= f.input :name,
+        required: true,
+        autofocus: true,
+        input_html: { autocomplete: "nombre" }%>
+    <%= f.input :gender,
+        required: true,
+        autofocus: true,
+        input_html: { autocomplete: "gender" }%>
+    <%= f.input :birthdate,
+        required: true,
+        autofocus: true,
+        input_html: { autocomplete: "birthdate" }%>
+    <%= f.input :specie,
+        required: true,
+        autofocus: true,
+        input_html: { autocomplete: "specie" }%>
+    <%= f.input :breed,
+        required: true,
+        autofocus: true,
+        input_html: { autocomplete: "breed" }%>
+    <%= f.input :photo, as: :file%>
     <%= f.submit %>
   <% end %>
-
 </div>
