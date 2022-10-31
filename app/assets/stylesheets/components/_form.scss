@@ -2,7 +2,9 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-xs);
+  justify-content: center;
 
+  
   &__group {
     flex: 1;
   }
