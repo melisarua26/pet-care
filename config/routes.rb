@@ -13,10 +13,8 @@ Rails.application.routes.draw do
   get '/pages/profile', to: 'pages#profile'
   #resources :users
   resources :pets
-  resources :vets
   resources :appointments
-  resources :owner_record
-  resources :vet_record
+  resources :owner_records
   # Defines the root path route ("/")
   # root "articles#index"
 end
