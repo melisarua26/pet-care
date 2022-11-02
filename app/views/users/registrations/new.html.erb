@@ -1,4 +1,5 @@
-<div class= "container" >
+<h2>Sign up as a owner</h2>
+<div class="container">
 <section class="vh-100 gradient-custom">
   <div class="container py-5 h-100">
     <div class="row justify-content-center align-items-center h-100">
@@ -6,12 +7,9 @@
         <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
           <div class="card-body p-4 p-md-5">
 <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registrate</h3>
-
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
-
   <div class="form-inputs">
-
     <%= f.input :email,
                 required: true,
                 autofocus: true,
@@ -23,104 +21,36 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :name,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "name" }%>
+    <%= f.input :surname,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "surname" }%>
+    <%= f.input :address,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "address" }%>
+    <%= f.input :telephone_number,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "telephone_number" }%>
+    <%= f.input :city,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "city" }%>
+    <%= f.input :country, as: :string,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "country" }%>
+    <%= f.input :cc,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "cc" }%>
   </div>
-
-
- <form>
-
-              <div class="row">
-                <div class="col-md-6 mb-4">
-
-                  <div class="form-outline">
-                  <label class="form-label" for="firstName">Nombres</label>
-                  <input type="text" id="firstName" class="form-control form-control-lg" />
-                  </div>
-
-                </div>
-                <div class="col-md-6 mb-4">
-
-                  <div class="form-outline">
-                    <label class="form-label" for="lastName">Apellidos</label>
-                    <input type="text" id="lastName" class="form-control form-control-lg" />
-                  </div>
-
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-6 mb-4 d-flex align-items-center">
-
-                  <div class="form-outline datepicker w-100">
-                    <label for="birthdayDate" class="form-label">Fecha de nacimiento</label>
-                    <input type="date" class="form-control form-control-lg" id="birthdayDate" />
-                  </div>
-
-                </div>
-
-              <div class="row">
-                <div class="col-md-6 mb-4 pb-2">
-
-                  <div class="form-outline">
-                    <label class="form-label" for="emailAddress">Correo</label>
-                    <input type="email" id="emailAddress" class="form-control form-control-lg" />
-                  </div>
-
-                </div>
-                <div class="col-md-6 mb-4 pb-2">
-
-                  <div class="form-outline">
-                    <label class="form-label" for="phoneNumber">Celular</label>
-                    <input type="tel" id="phoneNumber" class="form-control form-control-lg" />
-                  </div>
-
-                </div>
-              </div>
-
-              <div class="col-md-6 mb-4">
-
-                  <h6 class="mb-2 pb-1">Género: </h6>
-
-                  <div class="form-check form-check-inline">
-                    <label class="form-check-label" for="femaleGender">Femenino</label>
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
-                      value="option1" checked />
-                  </div>
-
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
-                      value="option2" />
-                    <label class="form-check-label" for="maleGender">Masculino</label>
-                  </div>
-
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender"
-                      value="option3" />
-                    <label class="form-check-label" for="otherGender">Otro</label>
-                  </div>
-
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-12">
-
-                  <select class="select form-control-lg">
-                    <option value="1" disabled>Selecciona una opción </option>
-                    <option value="2">1</option>
-                    <option value="3">2</option>
-                    <option value="4">3</option>
-                    <option value="4">más de 3</option>
-                  </select>
-                  <label class="form-label select-label">Numero de mascotas</label>
-
-                </div>
-              </div>
-</div>
-            </form>
-          </div>
-
+  <div class="form-actions">
+          <%= f.button :submit, "Sign up", class: "btn-primary" %>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-</div>
+<% end %>
