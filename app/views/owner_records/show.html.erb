@@ -1,17 +1,15 @@
 <div class="container justify-content center">
-  <%# <%= cl_image_tag locals[:place].photo.key, height: 400, width: 600, crop: :fill %>
-  <%#= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %>
-
-  <h2><%= @owner_record.name %></h2>
-  <p><%#= ISO3166::Country[@pet.country].common_name
- %></p>
-  <p><%= @owner_record.gender %></p>
-  <p><%= @owner_record.breed %></p>
-  <p>Owner: <%= @owner_record.user.email %></p>
+  <%# <%= locale["pet"].inspect%>
+  <% if @owner_record.photo.attached? %>
+  <%= cl_image_tag @owner_record.photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+  <%#= @owner_record.date %>
+  <p><%= @owner_record.title %></p>
+  <p><%= @owner_record.description %></p>
+  <p>Owner: <%= @owner_record.pet.user %></p>
 <div class="btn-group" role="group" aria-label="Basic example">
-  <%= button_to "Back to records", pet_path, method: :get, class: "btn btn-primary" %>
-  <%= button_to "Edit record", edit_owner_record_path(@owner_record), method: :get, class: "btn btn-primary" %>
-  <%= button_to "Eliminar",  owner_record_path(@owner_record), method: :delete, class: "btn btn-primary", data: {turbo_confirm: "Estas seguro?"} %>
-  <%#= link_to "Reservar", (@pet), class: "btn btn-primary"  %>
-  <%# TODO: el boton de 'Reservar' no funciona, por lo que se debe agregar la funcionalidad :) %>
+  <%= button_to "Back to pets", owner_records_path, method: :get, class: "btn btn-primary" %>
+  <%= link_to "Edit record", edit_owner_record_path(@owner_record), class: "btn btn-primary" %>
+  <%= button_to "Eliminar", @owner_record, method: :delete, class: "btn btn-primary", data: {turbo_confirm: "Estas seguro?"} %>
+  <%= link_to "Crear nueva cita", new_owner_record_path, class: "btn btn-primary"  %>
 </div>

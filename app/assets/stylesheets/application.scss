@@ -2,6 +2,7 @@
 // *= require bootstrap
 *= require_tree .
 *= require_self
+*= require simple_calendar
 */
 // Graphical variables
 @import "config/fonts";
@@ -17,3 +18,4 @@
 @import "pages/index";
 @import "components/navbar";
 @import "components/new.html.scss";
+@import "simple_calendar";

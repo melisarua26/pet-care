@@ -1,9 +1,10 @@
+<h1>Edit appointment</h1>
 <div class="container form">
-  <%= simple_form_for([@pet, @appointment]) do |f| %>
+  <%= simple_form_for(@appointment) do |f| %>
     <%= f.input :start_date %>
     <%= f.input :end_date %>
     <%= f.input :title %>
     <%= f.input :description %>
     <%= f.submit %>
   <% end %>
-</div>
+</div>>

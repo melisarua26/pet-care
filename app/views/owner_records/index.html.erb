@@ -3,7 +3,7 @@
   <div class="row">
     <% @owner_record.each do |record| %>
     <div class="col-md-6 col-lg-4">
-      <%= render 'owner_records', locals: { owner_record: owner_record } %>
+      <%= render 'owner_record', owner_record: record %>
     </div>
     <% end %>
   </div>

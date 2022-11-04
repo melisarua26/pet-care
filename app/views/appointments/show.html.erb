@@ -1,14 +1,4 @@
-<div class="container justify-content center">
-  <h2><%= @pet.name %></h2>
-  <p><%#= ISO3166::Country[@pet.country].common_name
- %></p>
-  <p><%= @vet.name %></p>
-  <p><%= @appointment.date %></p>
-  <p>Owner: <%= @pet.user.email %></p>
-<div class="btn-group" role="group" aria-label="Basic example">
-  <%= button_to "Back to pets", pets_path, method: :get, class: "btn btn-primary" %>
-  <%= button_to "Edit pet", edit_appointment_path(@appointment), method: :get, class: "btn btn-primary" %>
-  <%= button_to "Eliminar", @appointment, method: :delete, class: "btn btn-primary", data: {turbo_confirm: "Estas seguro?"} %>
-  <%= link_to "Crear nueva cita", new_appointment(@appointment), class: "btn btn-primary"  %>
 
-</div>
+<h1>calendar</h1>
+
+ <%= button_to "Eliminar", @appointment, method: :delete, class: "btn btn-primary", data: {turbo_confirm: "Estas seguro?"} %>
