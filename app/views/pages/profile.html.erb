@@ -1,43 +1,32 @@
-<%= current_user.name %>
-<% pets = Pet.where(user_id: current_user.id) %>
-
 <div class="container">
-  <h3> Hola <%= current_user.email %></h3>
-  <h4>¿Que deseas registrar hoy?</h4>
+  <h3 class="text-center" > Hola  <%= current_user.name%> <%= current_user.surname %></h3>
+  <h4 class="text-center" >Nos encanta verte de nuevo en Petcare</h4>
 
 
   <hr class="featurette-divider">
 
-    <div class="row featurette">
-      <% pets.each do |pet | %>
+    <div class="row featurette" style="display: flex; justify-content: center;">
 
 
         <div class="col-md-6">
-          <div class="card" style="width: 18rem;">
-            <img src="https://images.unsplash.com/photo-1506551109886-6101f48c1ab9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" class="card-img-top mx-auto rounded-circle w-75" alt="">
+          <div class="card" style="width: 28rem;">
+            <img src="https://images.unsplash.com/photo-1542740348-39501cd6e2b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" class="card-img-top mx-auto rounded-circle w-75" alt="">
             <div class="card-body">
-              <h5 class="card-title"><%= pet.name%></h5>
+              <h5 class="card-title"><%= current_user.name%></h5>
               <div class='d-flex justify-content-between' >
-                <p class="card-text"> Género <i class="fa-solid fa-transgender"></i><%= pet.gender%></p>
-                <p class="card-text"> Género <i class="fa-solid fa-transgender"></i><%= pet.gender%></p>
+                <p class="card-text"> Ciudad: </i><%= current_user.city  %></p>
+                <p class="card-text"> País: </i><%= current_user.country %></p>
+                </div>
+              <div class='d-flex justify-content-between' >
+                <p class="card-text"> Teléfono: <i class="fa-light fa-cat-space"></i><%= current_user.telephone_number%></p>
+                <p class="card-text"> Dirección: <i class="fa-light fa-cat-space"></i><%= current_user.address%></p>
               </div>
               <div class='d-flex justify-content-between' >
-                <p class="card-text"> Género <i class="fa-solid fa-transgender"></i><%= pet.gender%></p>
-                <p class="card-text"> Género <i class="fa-solid fa-transgender"></i><%= pet.gender%></p>
+                <p class="card-text"> Documento CC: <i class="fa-solid fa-sheep"></i><%= current_user.cc%></p>
+                <p class="card-text"> Correo: <i class="fa-light fa-cat-space"></i><%= current_user.email%></p>
               </div>
-              <div class='d-flex justify-content-between' >
-                <p class="card-text"> Género <i class="fa-solid fa-transgender"></i><%= pet.gender%></p>
-                <p class="card-text"> Género <i class="fa-solid fa-transgender"></i><%= pet.gender%></p>
-              </div>
-              <a href="#" class="btn btn-warning w-100">Crear cita</a>
+              <a href="#" class="btn btn-warning w-100">Editar perfil</a>
             </div>
           </div>
         </div>
-      <% end %>
     </div>
-
-
-
-
-
-<img src="https://images.unsplash.com/photo-1499887142886-791eca5918cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" class="card-img-top rounded-circle w-25" alt="...">
