@@ -13,7 +13,7 @@ class OwnerRecordsController < ApplicationController
   end
 
   def create
-    @owner_record = OwnerRecord.new(pet_params)
+    @owner_record = OwnerRecord.new(owner_record_params)
     @owner_record.user = current_user
     if @owner_record.save
       redirect_to new_owner_record_path(@owner_record)
@@ -29,7 +29,7 @@ class OwnerRecordsController < ApplicationController
   def update
     @owner_record = OwnerRecord.find(params[:id])
     @owner_record.update(owner_record_params)
-    redirect_to pet_path(@owner_record)
+    redirect_to owner_record_index(@owner_record)
   end
 
   def destroy
@@ -43,10 +43,10 @@ class OwnerRecordsController < ApplicationController
   private
 
   def owner_record_params
-    params.require(:o_record).permit(:description, :type, :date, :photo)
+    params.require(:owner_record).permit(:description, :type, :date, :photo)
   end
 
-  def set_place
+  def set_owner_record
     @owner_record = OwnerRecord.find(params[:id])
   end
 
