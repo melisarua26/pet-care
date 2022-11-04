@@ -1,7 +1,8 @@
 <div class="container form">
   <%= simple_form_for([@pet, @appointment]) do |f| %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
+    <%#= f.input :pet, :as => :select, colecction: Pet.where(user_id: current_user.id).map { |pet| [ pet.name, pet.id ] } %>
+    <%= f.input :start_time %>
+    <%= f.input :end_time %>
     <%= f.input :title %>
     <%= f.input :description %>
     <%= f.submit %>

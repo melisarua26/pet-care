@@ -10,8 +10,9 @@
 <main>
   <nav class="navbar navbar-dark bg-dark" aria-label="Dark offcanvas navbar">
     <div class="container-fluid">
-      <a class="navbar-brand" href="root_path">Petcare
+      <a class="navbar-brand" href="<%=root_path %>">Petcare
       </a>
+
   <% if signed_in?  %>
     <%= current_user.name %>
     <% end %>
@@ -70,12 +71,7 @@
                 Mi citas
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Ver mis citas</a></li>
-                <hr class="dropdown-divider">
-                <li><a class="dropdown-item" href="#">Editar mis citas</a></li>
-                <hr class="dropdown-divider">
-                 <li><a class="dropdown-item" href="#">Agregar citas</a></li>
-
+                <li><a class="dropdown-item" href="#"><%= link_to "Ver citas", appointments_path %></a></li>
               </ul>
               <% if user_signed_in? %>
               <ul>
