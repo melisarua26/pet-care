@@ -29,6 +29,34 @@
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
+                <%= f.input :name,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "name" }%>
+    <%= f.input :surname,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "surname" }%>
+    <%= f.input :address,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "address" }%>
+    <%= f.input :telephone_number,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "telephone_number" }%>
+    <%= f.input :city,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "city" }%>
+    <%= f.input :country, as: :string,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "country" }%>
+    <%= f.input :cc,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "cc" }%>
   </div>
 
   <div class="form-actions">

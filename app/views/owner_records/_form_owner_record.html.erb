@@ -7,9 +7,9 @@
           <div class="card-body p-4 p-md-5">
           <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Nuevo record</h3>
 <div class="container form">
-  <%= simple_form_for(@owner_record) do |f| %>
+  <%= simple_form_for([@pet, @owner_record]) do |f| %>
     <%= f.input :date %>
-    <%= f.input :type %>
+    <%= f.input :title %>
     <%= f.input :description %>
     <%= f.input :photo, as: :file %>
     <%= f.submit %>

@@ -2,9 +2,8 @@ class PetsController < ApplicationController
   before_action :set_pet, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!
   def index
-   # @pets = Pet.all.map { |pet| pet if pet.user == current_user }.compact
-   #@pets = Pet.where(user:current_user)
-   @pets = Pet.all
+    @pets = Pet.where(user: current_user)
+
   end
 
   def new
@@ -21,7 +20,7 @@ class PetsController < ApplicationController
     if @pet.save
       redirect_to pet_path(@pet)
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
