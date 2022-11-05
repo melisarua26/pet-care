@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   get '/pages/profile', to: 'pages#profile'
   #resources :users
   resources :pets do
-  resources :appointments, only: [:new, :create]
-  resources :owner_records, only: [:new, :create]
+    resources :appointments, only: [:new, :create]
+    resources :owner_records, only: [:new, :create]
   end
 
   resources :appointments, except: [:new, :create]
