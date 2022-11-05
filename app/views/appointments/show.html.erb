@@ -1,16 +1,17 @@
 
-<h1>calendar</h1>
-<div class="calendar-container">
-  <%= month_calendar(events: @appointments, end_attribute: :end_time) do |date, appointments| %>
-    <%= date %>
-
-    <% appointments.each do |appointment| %>
-      <div class="meeting">
-        <p><%= appointment.name %></p>
-        <small><%= appointment.time unless appointment.multi_days? %></small>
-      </div
-    <% end %>
-  <% end %>
-</div>
-
- <%= button_to "Eliminar", @appointment, method: :delete, class: "btn btn-primary", data: {turbo_confirm: "Estas seguro?"} %>
+<body>
+  <div class="py-5">
+    <div class="container">
+      <div class="row hidden-md-up">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-block">
+              <h4 class="card-title"><%= @appointment.title %></h4>
+              <h6 class="card-subtitle text-muted"><%= @appointment.description %></h6>
+              <p class="card-text p-y-1"><%= @appointment.start_time %>-<%= @appointment.end_time %></p>
+              <a href="#" class="card-link"><%= link_to "Edit appointment", edit_appointment_path(@appointment), class: "btn btn-primary" %></a>
+              <%= button_to "Eliminar", @appointment, method: :delete, class: "btn btn-primary", data: {turbo_confirm: "Estas seguro?"} %>
+            </div>
+          </div>
+        </div>
+<%= button_to "Back to calendar", appointments_path, method: :get, class: "btn btn-primary" %>

@@ -1,4 +1,11 @@
 
-<%= month_calendar(attribute: :start_date, end_attribute: :end_date) do |date| %>
+<%= month_calendar(events:  @appointments, attribute: :start_time, end_attribute: :end_time) do |date, meetings| %>
   <%= date %>
+  <% meetings.each do |meeting| %>
+      <a class="meeting" href="<%=appointment_path(meeting)%>">
+        <p><%= meeting.title %></p>
+        <small><%= meeting.time unless meeting.multi_days? %>
+        </small>
+      </a>
+  <% end %>
 <% end %>
