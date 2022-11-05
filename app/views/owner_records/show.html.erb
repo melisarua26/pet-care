@@ -8,8 +8,8 @@
   <p><%= @owner_record.description %></p>
   <p>Owner: <%= @owner_record.pet.user %></p>
 <div class="btn-group" role="group" aria-label="Basic example">
-  <%= button_to "Back to pets", owner_records_path, method: :get, class: "btn btn-primary" %>
+  <%= button_to "Back to records", owner_records_path, method: :get, class: "btn btn-primary" %>
   <%= link_to "Edit record", edit_owner_record_path(@owner_record), class: "btn btn-primary" %>
   <%= button_to "Eliminar", @owner_record, method: :delete, class: "btn btn-primary", data: {turbo_confirm: "Estas seguro?"} %>
-  <%= link_to "Crear nueva cita", new_owner_record_path, class: "btn btn-primary"  %>
+  <%= link_to "Crear nuevo record", new_pet_owner_record_path(@owner_record.pet), class: "btn btn-primary"  %>
 </div>
