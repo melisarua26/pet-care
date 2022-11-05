@@ -25,7 +25,7 @@
                 <p class="card-text"> Documento CC: <i class="fa-solid fa-sheep"></i><%= current_user.cc%></p>
                 <p class="card-text"> Correo: <i class="fa-light fa-cat-space"></i><%= current_user.email%></p>
               </div>
-              <a href="#" class="btn btn-warning w-100">Editar perfil</a>
+              <a href="#" class="btn btn-warning w-100"><%= link_to "Editar mi perfil", edit_user_registration_path %></a>
             </div>
           </div>
         </div>
