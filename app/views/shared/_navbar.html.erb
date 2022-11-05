@@ -43,9 +43,9 @@
                 Mi Perfil
               </a>
               <ul class="dropdown-menu">
-                <li><%= link_to "Ver mi perfil", pages_profile_path %></li>
+                <li><%= link_to "Ver mi perfil", pages_profile_path, class: "btn-navbar" %></li>
                 <hr class="dropdown-divider">
-                <li><%= link_to "Editar mi perfil", edit_user_registration_path %></li>
+                <li><%= link_to "Editar mi perfil", edit_user_registration_path, class: "btn-navbar" %></li>
 
 
               </ul>
@@ -55,12 +55,12 @@
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Mi mascotas
+                Mis mascotas
               </a>
               <ul class="dropdown-menu">
-                <li><%= link_to "Ver mis mascotas", pets_path %></li>
+                <li><%= link_to "Ver mis mascotas", pets_path, class: "btn-navbar" %></li>
                 <hr class="dropdown-divider">
-                 <li><%= link_to "Agregar mascotas", new_pet_path %></li>
+                 <li><%= link_to "Agregar mascotas", new_pet_path, class: "btn-navbar" %></li>
               </ul>
             </li>
           </ul>
@@ -68,10 +68,10 @@
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Mi citas
+                Mis citas
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#"><%= link_to "Ver citas", appointments_path %></a></li>
+                <li><%= link_to "Ver citas", appointments_path, class: "btn-navbar" %></li>
               </ul>
               <% if user_signed_in? %>
               <ul>
