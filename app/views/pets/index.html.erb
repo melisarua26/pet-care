@@ -1,28 +1,24 @@
-<div class="container mt-4 featurette">
-
-  <div class="row row-cols-1 row-cols-md-3 g-4">
+<div class="container">
+  <section class="mx-auto my-5" style="max-width: 23rem;">
     <% @pets.each do |pet| %>
-    <div class="col">
-
-          <div class="card" style="width: 18rem;">
-            <img src="https://images.unsplash.com/photo-1506551109886-6101f48c1ab9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" class="card-img-top mx-auto rounded-circle w-75" alt="">
-            <div class="card-body">
-              <h5 class="card-title"><%= pet.name%></h5>
-              <div class='d-flex justify-content-between' >
-                <p class="card-text"> Género <i class="fa-solid fa-transgender"></i><%= pet.gender%></p>
-                <p class="card-text"> Cumple <i class="fa-solid fa-cake-candles"></i><%= pet.birthdate%></p>
-              </div>
-              <div class='d-flex justify-content-between' >
-                <p class="card-text"> Especie <i class="fa-solid fa-sheep"></i><%= pet.specie%></p>
-                <p class="card-text"> Raza <i class="fa-light fa-cat-space"></i><%= pet.breed%></p>
-              </div>
-              <a href="#" class="btn btn-warning w-100">Crear cita</a>
-            </div>
-          </div>
-
-
+    <div class="card testimonial-card mt-2 mb-3">
+      <div class="card-up aqua-gradient"></div>
+      <div class="avatar mx-auto white">
+        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="rounded-circle img-fluid"
+          alt="woman avatar">
+      </div>
+      <div class="card-body text-center">
+        <h4 class="card-title font-weight-bold"><%= pet.name%></h4>
+        <hr>
+        <p><i class="fas fa-quote-left"></i> <%= pet.gender%></p>
+         <p><i class="fas fa-quote-left"></i> <%= pet.birthdate%></p>
+          <p><i class="fas fa-quote-left"></i> <%= pet.breed%></p>
+          <a href="#" class="btn btn-warning w-100"><%= button_to "Ver mascota", root_path%></a>
+      </div>
     </div>
     <%end%>
-  </div>
-
+  </section>
 </div>
+<%= month_calendar(attribute: :start_date, end_attribute: :end_date) do |date| %>
+  <%= date %>
+<% end %>

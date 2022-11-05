@@ -1,4 +1,4 @@
-<div class="container justify-content center">
+<div class="clash-card">
   <%# <%= locale["pet"].inspect%>
   <% if @pet.photo.attached? %>
   <%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %>
@@ -12,5 +12,5 @@
   <%= link_to "Edit pet", edit_pet_path(@pet), class: "btn btn-primary" %>
   <%= button_to "Eliminar", @pet, method: :delete, class: "btn btn-primary", data: {turbo_confirm: "Estas seguro?"} %>
   <%= link_to "Crear nueva cita", new_appointment_path, class: "btn btn-primary"  %>
-
 </div>
+

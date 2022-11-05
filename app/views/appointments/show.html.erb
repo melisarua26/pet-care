@@ -1,4 +1,16 @@
 
 <h1>calendar</h1>
+<div class="calendar-container">
+  <%= month_calendar(events: @appointments, end_attribute: :end_time) do |date, appointments| %>
+    <%= date %>
+
+    <% appointments.each do |appointment| %>
+      <div class="meeting">
+        <p><%= appointment.name %></p>
+        <small><%= appointment.time unless appointment.multi_days? %></small>
+      </div
+    <% end %>
+  <% end %>
+</div>
 
  <%= button_to "Eliminar", @appointment, method: :delete, class: "btn btn-primary", data: {turbo_confirm: "Estas seguro?"} %>
