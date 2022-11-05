@@ -6,6 +6,7 @@
       <div class="avatar mx-auto white">
       <%= cl_image_tag pet.photo.key, height: 300, width: 300, crop: :fill, class:"rounded-circle img-fluid", alt:"woman avatar"%>
       </div>
+
       <div class="card-body text-center">
         <h4 class="card-title font-weight-bold"><p><i class="fa-solid fa-venus-mars"></i> <strong>Gender</strong></i> <%= pet.gender%></p>
          <p><i class="fa-solid fa-cake-candles"></i> <strong>Birthdate</strong> <%= pet.birthdate%></p>
@@ -13,6 +14,7 @@
           <p><i class="fa-solid fa-bolt"></i> <strong>Specie</strong> <%= pet.specie%></p>
           <%= button_to "Ver mascota", pet_path(pet),method: :get, class:"btn btn-warning w-100" %>
       </div>
+
     </div>
     <%end%>
   </section>
