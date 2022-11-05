@@ -4,21 +4,16 @@
     <div class="card testimonial-card mt-2 mb-3">
       <div class="card-up aqua-gradient"></div>
       <div class="avatar mx-auto white">
-        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="rounded-circle img-fluid"
-          alt="woman avatar">
+      <%= cl_image_tag pet.photo.key, height: 300, width: 300, crop: :fill, class:"rounded-circle img-fluid", alt:"woman avatar"%>
       </div>
       <div class="card-body text-center">
-        <h4 class="card-title font-weight-bold"><%= pet.name%></h4>
-        <hr>
-        <p><i class="fas fa-quote-left"></i> <%= pet.gender%></p>
-         <p><i class="fas fa-quote-left"></i> <%= pet.birthdate%></p>
-          <p><i class="fas fa-quote-left"></i> <%= pet.breed%></p>
-          <a href="#" class="btn btn-warning w-100"><%= button_to "Ver mascota", root_path%></a>
+        <h4 class="card-title font-weight-bold"><p><i class="fa-solid fa-venus-mars"></i> <strong>Gender</strong></i> <%= pet.gender%></p>
+         <p><i class="fa-solid fa-cake-candles"></i> <strong>Birthdate</strong> <%= pet.birthdate%></p>
+          <p><i class="fa-solid fa-dog"></i> <strong>Breed</strong> <%= pet.breed%></p>
+          <p><i class="fa-solid fa-bolt"></i> <strong>Specie</strong> <%= pet.specie%></p>
+          <%= button_to "Ver mascota", pet_path(pet),method: :get, class:"btn btn-warning w-100" %>
       </div>
     </div>
     <%end%>
   </section>
 </div>
-<%= month_calendar(attribute: :start_date, end_attribute: :end_date) do |date| %>
-  <%= date %>
-<% end %>

@@ -10,8 +10,9 @@
 <main>
   <nav class="navbar navbar-dark bg-dark" aria-label="Dark offcanvas navbar">
     <div class="container-fluid">
-      <a class="navbar-brand" href="root_path">Petcare
+      <a class="navbar-brand" href="<%=root_path %>">Petcare
       </a>
+
   <% if signed_in?  %>
     <%= current_user.name %>
     <% end %>

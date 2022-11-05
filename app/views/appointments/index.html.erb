@@ -4,6 +4,7 @@
   <% meetings.each do |meeting| %>
       <a class="meeting" href="<%=appointment_path(meeting)%>">
         <p><%= meeting.title %></p>
+         <p><%= meeting.pet.name %></p>
         <small><%= meeting.time unless meeting.multi_days? %>
         </small>
       </a>
