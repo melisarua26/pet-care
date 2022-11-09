@@ -22,7 +22,9 @@ and is wrapped around the whole page content, except for the footer in this exam
 <div class="w3-col l8 s12">
   <!-- Blog entry -->
   <div class="w3-card-4 w3-margin w3-white">
+  <% if current_user.photo.attached? %>
    <%= cl_image_tag current_user.photo.key, height: 300, crop: :fill, class: "img-fluid w-100", alt:"woman avatar"%>
+  <% end %>
     <div class="w3-container mt-3">
       <h3><b><%= current_user.name%></b></h3>
 
@@ -55,9 +57,11 @@ and is wrapped around the whole page content, except for the footer in this exam
         <div class ="border p-2">
           <div class = "d-flex justify-content-between">
             <strong><%= pet.name %></strong>
-            <%= pet.appointments.last.start_time&.strftime("%d/%m/%Y %H:%M")%>
+            <% if !pet.appointments.empty? %>
+              <%= pet.appointments.last.start_time&.strftime("%d/%m/%Y %H:%M")%>
+              <p><%= pet.appointments.last.title %></p>
+            <% end %>
           </div>
-          <p><%= pet.appointments.last.title %></p>
         </div>
       <% end %>
     </div>
