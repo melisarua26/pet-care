@@ -1,6 +1,7 @@
 <div class="container">
-  <section class="mx-auto my-5" style="max-width: 23rem;">
+  <div class="row">
     <% @pets.each do |pet| %>
+    <div class="col-4">
     <div class="card testimonial-card mt-2 mb-3">
       <div class="card-up aqua-gradient"></div>
       <div class="avatar mx-auto white">
@@ -14,8 +15,8 @@
           <p><i class="fa-solid fa-bolt"></i> <strong>Specie</strong> <%= pet.specie%></p>
           <%= button_to "Ver mascota", pet_path(pet),method: :get, class:"btn btn-warning w-100" %>
       </div>
-
+    </div>
     </div>
     <%end%>
-  </section>
+  </div>
 </div>
