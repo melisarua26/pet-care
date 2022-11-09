@@ -1,11 +1,12 @@
 <div class="container">
-  <div class="row">
+  <section class="my-5">
+   <div class="row">
     <% @pets.each do |pet| %>
-    <div class="col-4">
+     <div class="col-3">
     <div class="card testimonial-card mt-2 mb-3">
       <div class="card-up aqua-gradient"></div>
       <div class="avatar mx-auto white">
-      <%= cl_image_tag pet.photo.key, height: 300, width: 300, crop: :fill, class:"rounded-circle img-fluid", alt:"woman avatar"%>
+      <%= cl_image_tag pet.photo.key, height: 500, width: 500, crop: :fill, class:"rounded-circle img-fluid", alt:"woman avatar"%>
       </div>
 
       <div class="card-body text-center">
@@ -18,5 +19,6 @@
     </div>
     </div>
     <%end%>
-  </div>
+    </div>
+  </section>
 </div>
