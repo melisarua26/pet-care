@@ -74,38 +74,38 @@ and is wrapped around the whole page content, except for the footer in this exam
   <div class="w3-card w3-margin">
     <div class="w3-container w3-padding">
       <h4><b>Proximas citas </b></h4>
-      <% @pet.appointment.each do |pet| %>
+      <% @pet.appointments.each do |appointment| %>
         <div class ="border p-2">
           <div class = "d-flex justify-content-between">
-            <strong><%= pet.name %></strong>
-            <%= pet.appointments.last.start_time&.strftime("%d/%m/%Y %H:%M")%>
+            <strong><%= appointment.title %></strong>
+            <%= appointment.start_time&.strftime("%d/%m/%Y %H:%M")%>
           </div>
-          <p><%= pet.appointments.last.title %></p>
         </div>
       <% end %>
 
     </div>
   </div>
    <%= button_to "Ver calendario", appointments_path, method: :get, class: "btn btn-primary" %>
+   <%= button_to "Agregar cita", new_pet_appointment_path(@pet), method: :get, class: "btn btn-primary" %>
   <hr>
 
-  <!-- Posts -->
+  <!-- OWNER RECORDS -->
   <div class="w3-card w3-margin">
     <div class="w3-container w3-padding">
       <h4><b>Records de <%= @pet.name%></b></h4>
     </div>
     <ul class="w3-ul w3-hoverable w3-white">
-    <% current_user.pets.each do |pet| %>
+    <% @pet.owner_records.each do |record| %>
       <li class="w3-padding-16">
-        <%= cl_image_tag pet.photo.key, height: 50, width: 50, crop: :fill, class:"rounded-circle img-fluid w3-left w3-margin-right", alt:"woman avatar"%>
-        <span class="w3-large"><%= pet.name %></span><br>
-        <span><%= pet.breed %></span>
+        <%= cl_image_tag record.photo.key, height: 50, width: 50, crop: :fill, class:"rounded-circle img-fluid w3-left w3-margin-right", alt:"woman avatar"%>
+        <span class="w3-large"><%= record.title %></span><br>
+        <span><%= record.description %></span>
       </li>
       <% end %>
 
     </ul>
   </div>
-  <%= button_to "+ Agregar nueva mascota", new_pet_path, method: :get, class: "btn btn-primary" %>
+  <%= button_to "+ Agregar nuevo record", new_pet_owner_record_path(@pet), method: :get, class: "btn btn-primary" %>
   <hr>
 
   </div>
