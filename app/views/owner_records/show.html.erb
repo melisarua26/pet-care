@@ -1,15 +1,19 @@
+<div class="container">
+  <section class="my-5">
+   <div class="row">
+   <div class="col-3">
+      <div class="avatar mx-auto white">
 <div class="container justify-content center">
-  <%# <%= locale["pet"].inspect%>
   <% if @owner_record.photo.attached? %>
   <%= cl_image_tag @owner_record.photo.key, height: 300, width: 400, crop: :fill %>
   <% end %>
-  <%#= @owner_record.date %>
+  <%= @owner_record.date %>
   <p><%= @owner_record.title %></p>
   <p><%= @owner_record.description %></p>
-  <p>Owner: <%= @owner_record.pet.user %></p>
+  <p>Owner: <%= @owner_record.pet.name %></p>
 <div class="btn-group" role="group" aria-label="Basic example">
-  <%= button_to "Back to records", owner_records_path, method: :get, class: "btn btn-primary" %>
-  <%= link_to "Edit record", edit_owner_record_path(@owner_record), class: "btn btn-primary" %>
-  <%= button_to "Eliminar", @owner_record, method: :delete, class: "btn btn-primary", data: {turbo_confirm: "Estas seguro?"} %>
-  <%= link_to "Crear nuevo record", new_pet_owner_record_path(@owner_record.pet), class: "btn btn-primary"  %>
+  <%= button_to "Ver todos los documentos", owner_records_path, method: :get, class: "btn btn-primary" %>
+  <%= link_to "Editar documento", edit_owner_record_path(@owner_record), class: "btn btn-primary" %>
+  <%= button_to "Eliminar documento", @owner_record, method: :delete, class: "btn btn-primary", data: {turbo_confirm: "Estas seguro?"} %>
+  <%= link_to "Crear nuevo documento", new_pet_owner_record_path(@owner_record.pet), class: "btn btn-primary"  %>
 </div>
