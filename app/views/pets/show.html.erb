@@ -1,108 +1,96 @@
 
-<!--NEW PET PROFILE -->
-
-<div class="container">
-  <h3 class="text-center"> Hola  <%= current_user.name%> <%= current_user.surname %></h3>
-  <h4 class="text-center"></h4>
-  <h5 class="text-center"><span class="w3-opacity"><%=Date.today.strftime('%a %d %b %Y')%></span></h5>
+<!-- NEW PET PROFILE -->
+<div class="row justify-content-center">
+  <div class="col mb-3">
+    <h3 class="text-center"> <%= @pet.name%></h3>
+    <h5 class="text-center text-muted"><%= Date.today.strftime('%a %d %b %Y')%></h5>
+  </div>
 </div>
-<title></title>
-
-<style>
-body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-</style>
-</head>
-<body class="w3-light-grey">
-
-<!-- w3-content defines a container for fixed size centered content,
-and is wrapped around the whole page content, except for the footer in this example -->
-<div class="w3-content" style="max-width:1000px">
-
-<!-- Grid -->
-<div class="w3-row">
-
-<!-- Blog entries -->
-<div class="w3-col l8 s5">
-  <!-- Blog entry -->
-  <div class="w3-card-4 w3-margin w3-white">
-   <% if @pet.photo.attached? %>
-  <%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill, class: "img-fluid w-100" %>
-  <% end %>
-    <div class="w3-container mt-3">
-      <h3><b><%= @pet.name%></b></h3>
-
-    </div>
-
-    <div class="w3-container">
-      <p class="card-text"><strong> Raza:</strong> </i><%= @pet.breed %></p>
-      <p class="card-text"><strong>Especie:</strong> </i> <%= @pet.specie %></p>
-      <p class="card-text"><strong>Owner:</strong> </i><%= @pet.specie %></p>
-      <p class="card-text"><strong>Breed:</strong>  <i class="fa-solid fa-sheep"></i><%= @pet.gender %></p>
-      </p>
-      <div class="w3-row">
-        <div class="w3-col m8 s12">
-          <p><button class="w3-button w3-padding-large w3-white w3-border"><b><%= link_to "Editar perfil", edit_pet_path %> »</b></button></p>
-        </div>
+<div class="row justify-content-center">
+  <div class="col-10 col-sm-5 mb-5">
+    <div class="card">
+    <% if @pet.photo.attached? %>
+      <%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill, class: "img-fluid w-100" %>
+      <% end %>
+      <div class="card-body">
+        <h5 class="card-title"><%= @pet.name%></h5>
+        <p class="card-text">
+          <label for="" class="fw-bold">Raza:</label> <%= @pet.breed %>
+        </p>
+        <p class="card-text">
+          <label for="" class="fw-bold">Especie:</label> <%= @pet.specie %>
+        </p>
+        <p class="card-text">
+          <label for="" class="fw-bold">Género:</label> <%= @pet.gender %>
+        </p>
+        <p class="card-text">
+          <label for="" class="fw-bold">Propietario:</label> <%= @pet.user.name %>
+        </p>
+        <p class="card-text">
+          <label for="" class="fw-bold">ID:</label> <%= current_user.cc %>
+        </p>
+        <p class="card-text">
+          <label for="" class="fw-bold">Correo propietario:</label> <%= current_user.email %>
+        </p>
+        <%= link_to "Editar perfil", edit_user_registration_path, class: "btn btn-primary" %>
       </div>
-      <div class="card-body d-flex">
-
-  </div>
     </div>
-  </div>
-  <%= button_to "<< Ver mascotas", pets_path, method: :get, class: "btn btn-primary mx-1" %>
-  <br>
+    <br>
+     <%= button_to "<< Ver mascotas", pets_path, method: :get, class: "btn btn-primary mx-1" %>
+    <br>
     <%= button_to "Eliminar mascota", @pet, method: :delete, class: "btn btn-outline-secondary mx-1", data: {turbo_confirm: "Estas seguro?"} %>
-  <hr>
-</div>
+    <hr>
+  </div>
 
-<!-- Introduction menu -->
-<div class="w3-col l4">
-  <!-- About Card -->
-  <div class="w3-card w3-margin">
-    <div class="w3-container w3-padding">
-      <h4><b>Proximas citas </b></h4>
-      <% @pet.appointments.each do |appointment| %>
-        <div class ="border p-2">
-          <div class = "d-flex justify-content-between">
-            <strong><%= appointment.title %></strong>
-            <%= appointment.start_time&.strftime("%d/%m/%Y %H:%M")%>
+  <div class="col-10 col-sm-4">
+    <div class="row row-cols-1">
+      <div class="col mb-5">
+        <div class="card">
+          <h5 class="card-header m-0">Proximas citas</h5>
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+              <% @pet.appointments.each do |appointment| %>
+                <li class="list-group-item">
+                  <div class="row justify-content-between">
+                  <div class="col fw-bold"><%= appointment.title %></div>
+                    <% if !pet.appointments.empty? %>
+                      <div class="col text-center"><%= appointment.start_time&.strftime("%d/%m/%Y %H:%M")%></div>
+                      <div class="col text-center"><%= pet.appointments.last.title %></div>
+                    <% end %>
+                  </div>
+                </li>
+              <% end %>
+            </ul>
+            <%= button_to "Ver calendario", appointments_path, method: :get, class: "btn btn-primary mt-3" %>
+            <br>
+            <%= button_to "+ Agregar cita", new_pet_appointment_path(@pet), method: :post, class: "btn btn-primary mt-3" %>
           </div>
         </div>
-      <% end %>
-
+      </div>
+      <div class="col">
+        <div class="card">
+          <h5 class="card-header m-0">Documentos de <%= @pet.name%></h5>
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+              <% @pet.owner_records.each do |record| %>
+                <li class="list-group-item">
+                  <%= cl_image_tag record.photo.key, height: 50, width: 50, crop: :fill, class:"rounded-circle img-fluid w3-left w3-margin-right", alt:"woman avatar"%>
+                  <span class="w3-large"><%= record.title %></span><br>
+                  <span><%= record.description %></span>
+                </li>
+              <% end %>
+            </ul>
+            <%= button_to "+ Agregar documentos", new_pet_owner_record_path(@pet), method: :get, class: "btn btn-primary mt-3" %>
+            <br>
+            <%= button_to " Ver documentos",  owner_records_path, method: :get, class: "btn btn-primary" %>
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <%= button_to "+ Agregar otra mascota", new_pet_path, method: :get, class: "btn btn-primary mt-3" %>
+            <br>
+      </div>
     </div>
   </div>
-   <%= button_to "Ver calendario", appointments_path, method: :get, class: "btn btn-primary" %>
-   <br>
-   <%= button_to "Agregar cita", new_pet_appointment_path(@pet), method: :get, class: "btn btn-primary" %>
-  <hr>
-
-  <!-- OWNER RECORDS -->
-  <div class="w3-card w3-margin">
-    <div class="w3-container w3-padding">
-      <h4><b>Records de <%= @pet.name%></b></h4>
-    </div>
-    <ul class="w3-ul w3-hoverable w3-white">
-    <% @pet.owner_records.each do |record| %>
-      <li class="w3-padding-16">
-        <%= cl_image_tag record.photo.key, height: 50, width: 50, crop: :fill, class:"rounded-circle img-fluid w3-left w3-margin-right", alt:"woman avatar"%>
-        <span class="w3-large"><%= record.title %></span><br>
-        <span><%= record.description %></span>
-      </li>
-      <% end %>
-
-    </ul>
-  </div>
-  <%= button_to "+ Agregar nuevo record", new_pet_owner_record_path(@pet), method: :get, class: "btn btn-primary" %>
-  <br>
-  <%= button_to "+ Ver records", pet_owner_records_path(@pet), method: :get, class: "btn btn-primary" %>
-  </div>
-
-<!-- END Introduction Menu -->
-</div>
-
-<!-- END GRID -->
-</div><br>
-
-<!-- END w3-content -->
 </div>
