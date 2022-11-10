@@ -84,12 +84,11 @@ and is wrapped around the whole page content, except for the footer in this exam
         <span><%= pet.breed %></span>
       </li>
       <% end %>
-
     </ul>
   </div>
   <%= button_to "+ Agregar nueva mascota", new_pet_path, method: :get, class: "btn btn-primary" %>
-  <hr>
-
+  <br>
+  <%= button_to "Ver mascotas", pets_path, method: :get, class: "btn btn-primary" %>
   </div>
 
 <!-- END Introduction Menu -->

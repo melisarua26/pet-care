@@ -1,24 +1,5 @@
-<div class="container">
-  <div class="card my-4" style="width: 30rem;">
-    <%# <%= locale["pet"].inspect%>
-    <div class="card-body text-center">
-      <% if @pet.photo.attached? %>
-      <%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %>
-      <% end %>
-      <h2 class="mt-3"><%= @pet.name %></h2>
-      <p style="font-weight: bold;">Gender: <%= @pet.gender %></p>
-      <p style="font-weight: bold;">Breed: <%= @pet.breed %></p>
-      <p>Owner: <%= @pet.user.email %></p>
-    </div>
-  <div class="card-body d-flex">
-    <%= button_to "Back to pets", pets_path, method: :get, class: "btn btn-primary mx-1" %>
-    <%= link_to "Edit pet", edit_pet_path(@pet), class: "btn btn-primary" %>
-    <%= button_to "Eliminar", @pet, method: :delete, class: "btn btn-outline-secondary mx-1", data: {turbo_confirm: "Estas seguro?"} %>
-    <%= link_to "Crear nueva cita", new_pet_appointment_path(@pet), class: "btn btn-primary"  %>
-  </div>
-</div>
 
-<!--NEW PROFILE -->
+<!--NEW PET PROFILE -->
 
 <div class="container">
   <h3 class="text-center"> Hola  <%= current_user.name%> <%= current_user.surname %></h3>
@@ -45,7 +26,7 @@ and is wrapped around the whole page content, except for the footer in this exam
   <!-- Blog entry -->
   <div class="w3-card-4 w3-margin w3-white">
    <% if @pet.photo.attached? %>
-  <%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %>
+  <%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill, class: "img-fluid w-100" %>
   <% end %>
     <div class="w3-container mt-3">
       <h3><b><%= @pet.name%></b></h3>
@@ -55,7 +36,7 @@ and is wrapped around the whole page content, except for the footer in this exam
     <div class="w3-container">
       <p class="card-text"><strong> Raza:</strong> </i><%= @pet.breed %></p>
       <p class="card-text"><strong>Especie:</strong </i><%= @pet.specie %></p>
-      <p>Owner: <%= @pet.user.email %></p>
+      <p class="card-text"><strong>Owner:</strong </i><%= @pet.specie %></p>
       <p class="card-text"><strong>Breed:</strong>  <i class="fa-solid fa-sheep"></i><%= @pet.gender %></p>
       </p>
       <div class="w3-row">
@@ -63,8 +44,14 @@ and is wrapped around the whole page content, except for the footer in this exam
           <p><button class="w3-button w3-padding-large w3-white w3-border"><b><%= link_to "Editar perfil", edit_pet_path %> »</b></button></p>
         </div>
       </div>
+      <div class="card-body d-flex">
+
+  </div>
     </div>
   </div>
+  <%= button_to "<< Ver mascotas", pets_path, method: :get, class: "btn btn-primary mx-1" %>
+  <br>
+    <%= button_to "Eliminar mascota", @pet, method: :delete, class: "btn btn-outline-secondary mx-1", data: {turbo_confirm: "Estas seguro?"} %>
   <hr>
 </div>
 
@@ -86,6 +73,7 @@ and is wrapped around the whole page content, except for the footer in this exam
     </div>
   </div>
    <%= button_to "Ver calendario", appointments_path, method: :get, class: "btn btn-primary" %>
+   <br>
    <%= button_to "Agregar cita", new_pet_appointment_path(@pet), method: :get, class: "btn btn-primary" %>
   <hr>
 
@@ -106,8 +94,8 @@ and is wrapped around the whole page content, except for the footer in this exam
     </ul>
   </div>
   <%= button_to "+ Agregar nuevo record", new_pet_owner_record_path(@pet), method: :get, class: "btn btn-primary" %>
-  <hr>
-
+  <Br>
+  <%= button_to "+ Ver records", pet_owner_records_path(@pet), method: :get, class: "btn btn-primary" %>
   </div>
 
 <!-- END Introduction Menu -->
