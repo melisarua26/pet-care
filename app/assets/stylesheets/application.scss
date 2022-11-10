@@ -10,6 +10,7 @@
 @import "config/bootstrap_variables";
 
 // External libraries
+@import "simple_calendar";
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
 
@@ -18,4 +19,3 @@
 @import "pages/index";
 @import "components/navbar";
 @import "components/new.html.scss";
-//@import "simple_calendar";

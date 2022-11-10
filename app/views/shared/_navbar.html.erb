@@ -1,51 +1,50 @@
- <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-          <b><a class="navbar-brand" href="<%=root_path %>">Petcare
-      </a></b>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <% if !current_user%>
-                <li class="nav-item">
-                  <%= link_to "Iniciar sesión", user_session_path, class: "nav-link" %>
-                </li>
-                <li class="nav-item">
-                  <%= link_to "Registrate aquí", new_user_registration_path, class: "nav-link" %>
-                </li>
-              <% end %>
-              <% if user_signed_in?  %>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <%= current_user.name %>
-                </a>
-                <ul class="dropdown-menu">
-                  <li><%= link_to "Ver mi perfil", pages_profile_path, class: "dropdown-item" %></li>
-                  <li><%= link_to "Editar mi perfil", edit_user_registration_path, class: "dropdown-item" %></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete, form: {  data: { turbo: :false } }, class: "dropdown-item" %></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Mis mascotas
-                </a>
-                <ul class="dropdown-menu">
-                  <li><%= link_to "Ver mis mascotas", pets_path, class: "dropdown-item" %></li>
-                  <li><%= link_to "Agregar mascotas", new_pet_path, class: "dropdown-item" %></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Mis citas
-                </a>
-                <ul class="dropdown-menu">
-                  <li><%= link_to "Ver citas", appointments_path, class: "dropdown-item" %></li>
-                </ul>
-              </li>
-              <% end %>
-            </ul>
-          </div>
-        </div>
-      </nav>
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="<%=root_path %>">Petcare</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <% if !current_user%>
+          <li class="nav-item">
+            <%= link_to "Iniciar sesión", user_session_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Registrate aquí", new_user_registration_path, class: "nav-link" %>
+          </li>
+        <% end %>
+        <% if user_signed_in?  %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= current_user.name %>
+          </a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Ver mi perfil", pages_profile_path, class: "dropdown-item" %></li>
+            <li><%= link_to "Editar mi perfil", edit_user_registration_path, class: "dropdown-item" %></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><%= button_to "Cerrar Sesión", destroy_user_session_path, method: :delete, form: {  data: { turbo: :false } }, class: "dropdown-item" %></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Mis mascotas
+          </a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Ver mis mascotas", pets_path, class: "dropdown-item" %></li>
+            <li><%= link_to "Agregar mascotas", new_pet_path, class: "dropdown-item" %></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Mis citas
+          </a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Ver citas", appointments_path, class: "dropdown-item" %></li>
+          </ul>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
