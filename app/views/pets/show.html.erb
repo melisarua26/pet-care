@@ -35,8 +35,8 @@ and is wrapped around the whole page content, except for the footer in this exam
 
     <div class="w3-container">
       <p class="card-text"><strong> Raza:</strong> </i><%= @pet.breed %></p>
-      <p class="card-text"><strong>Especie:</strong </i><%= @pet.specie %></p>
-      <p class="card-text"><strong>Owner:</strong </i><%= @pet.specie %></p>
+      <p class="card-text"><strong>Especie:</strong> </i> <%= @pet.specie %></p>
+      <p class="card-text"><strong>Owner:</strong> </i><%= @pet.specie %></p>
       <p class="card-text"><strong>Breed:</strong>  <i class="fa-solid fa-sheep"></i><%= @pet.gender %></p>
       </p>
       <div class="w3-row">
@@ -94,7 +94,7 @@ and is wrapped around the whole page content, except for the footer in this exam
     </ul>
   </div>
   <%= button_to "+ Agregar nuevo record", new_pet_owner_record_path(@pet), method: :get, class: "btn btn-primary" %>
-  <Br>
+  <br>
   <%= button_to "+ Ver records", pet_owner_records_path(@pet), method: :get, class: "btn btn-primary" %>
   </div>
 
