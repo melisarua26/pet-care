@@ -10,14 +10,19 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body class="d-flex flex-column">
-    <%= render 'shared/navbar' %>
-    <%= yield %>
-    <%= render 'shared/footer' %>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <%= render 'shared/navbar' %>
+          <%= yield %>
+          <%= render 'shared/footer' %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
