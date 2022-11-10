@@ -79,16 +79,16 @@ and is wrapped around the whole page content, except for the footer in this exam
     <% current_user.pets.each do |pet| %>
       <li class="w3-padding-16">
         <%= cl_image_tag pet.photo.key, height: 50, width: 50, crop: :fill, class:"rounded-circle img-fluid w3-left w3-margin-right", alt:"woman avatar"%>
-        <span class="w3-large"><%= pet.name %></span><br>
+       <br>
+       <b><%= link_to pet.name, pet_path(pet), class: "w3-large" %></b>
         <span><%= pet.breed %></span>
       </li>
       <% end %>
-
     </ul>
   </div>
   <%= button_to "+ Agregar nueva mascota", new_pet_path, method: :get, class: "btn btn-primary" %>
-  <hr>
-
+  <br>
+  <%= button_to "Ver mascotas", pets_path, method: :get, class: "btn btn-primary" %>
   </div>
 
 <!-- END Introduction Menu -->
