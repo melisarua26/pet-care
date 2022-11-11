@@ -19,7 +19,7 @@ class OwnerRecordsController < ApplicationController
     @pet = Pet.find(params[:pet_id])
     @owner_record.pet = @pet
     if @owner_record.save!
-      redirect_to owner_record_path(@owner_record)
+      redirect_to owner_records_path(@owner_record)
     else
       render :new, status: :unprocessable_entity
     end
