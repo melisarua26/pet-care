@@ -1,12 +1,12 @@
 <div class= "card my-3">
     <%= cl_image_tag owner_record.photo.key, height: 185, class:"card-image-top" %>
     <div class="card-body">
-      <h3 class="card-title"><%= link_to(:owner_record.name, owner_record, class:"text-secondary")%></h3>
+      <h3 class="card-text"><strong>
+      <%= owner_record.title %></strong></h3>
       <p class="card-text"><strong>Date:</strong>
       <%= owner_record.date %></p>
-      <p class="card-text"><strong>Title:</strong>
-      <%= owner_record.title %></p>
       <p class="card-text"><strong>Description:</strong>
       <%= owner_record.description %></p>
     </div>
+    <%= button_to "Ver mascota", pet_path(owner_record.pet),method: :get, class:"btn btn-warning w-100" %>
 </div>

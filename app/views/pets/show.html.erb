@@ -27,7 +27,6 @@
           <label for="" class="fw-bold">Propietario:</label> <%= @pet.user.name %>
         </p>
         <p class="card-text">
-          <label for="" class="fw-bold">ID:</label> <%= current_user.cc %>
         </p>
         <p class="card-text">
           <label for="" class="fw-bold">Correo propietario:</label> <%= current_user.email %>
@@ -53,9 +52,9 @@
                 <li class="list-group-item">
                   <div class="row justify-content-between">
                   <div class="col fw-bold"><%= appointment.title %></div>
-                    <% if !pet.appointments.empty? %>
+                    <% if !@pet.appointments.empty? %>
                       <div class="col text-center"><%= appointment.start_time&.strftime("%d/%m/%Y %H:%M")%></div>
-                      <div class="col text-center"><%= pet.appointments.last.title %></div>
+                      <div class="col text-center"><%= appointment.title %></div>
                     <% end %>
                   </div>
                 </li>
