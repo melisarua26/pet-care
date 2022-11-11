@@ -11,5 +11,10 @@
           </a>
       <% end %>
     <% end %>
+    <%= button_to "<< Ver mascotas", pets_path, method: :get, class: "btn btn-primary my-3" %>
+  <%= button_to "<< Volver al perfil", pages_profile_path, method: :get, class: "btn btn-primary my-3" %>
   </div>
+  <%#= button_to "+ Agregar cita", new_pet_appointment_path(@pet), method: :post, class: "btn btn-primary mt-3" %>
+  <br>
+
 </div>
