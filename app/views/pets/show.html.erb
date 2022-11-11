@@ -52,7 +52,7 @@
                 <li class="list-group-item">
                   <div class="row justify-content-between">
                   <div class="col fw-bold"><%= appointment.title %></div>
-                    <% if !@pet.appointments.empty? %>
+                    <% if @pet.appointments.empty? %>
                       <div class="col text-center"><%= appointment.start_time&.strftime("%d/%m/%Y %H:%M")%></div>
                       <div class="col text-center"><%= appointment.title %></div>
                     <% end %>
@@ -62,7 +62,7 @@
             </ul>
             <%= button_to "Ver calendario", appointments_path, method: :get, class: "btn btn-primary mt-3" %>
             <br>
-            <%= button_to "+ Agregar cita", new_pet_appointment_path(@pet), method: :post, class: "btn btn-primary mt-3" %>
+            <%= button_to "+ Agregar cita", new_pet_appointment_path(@pet), method: :get, class: "btn btn-primary mt-3" %>
           </div>
         </div>
       </div>

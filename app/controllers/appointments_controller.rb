@@ -22,7 +22,7 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.new(appointment_params)
     @pet = Pet.find(params[:pet_id])
     @appointment.pet = @pet
-    @appointment.vet = Vet.find(1)
+    @appointment.vet = Vet.find_by(email: "vet@gmail.com")
     if @appointment.save
       redirect_to appointment_path(@appointment)
     else
