@@ -51,11 +51,10 @@
               <% @pet.appointments.each do |appointment| %>
                 <li class="list-group-item">
                   <div class="row justify-content-between">
-                  <div class="col fw-bold"><%= appointment.title %></div>
-                    <% if @pet.appointments.empty? %>
-                      <div class="col text-center"><%= appointment.start_time&.strftime("%d/%m/%Y %H:%M")%></div>
-                      <div class="col text-center"><%= appointment.title %></div>
-                    <% end %>
+                    <div class="col fw-bold"><%= appointment.title %>
+                      <h3><%= appointment.description %></h3>
+                      <h5><%= appointment.start_time&.strftime("%d/%m/%Y %H:%M")%></h5>
+                    </div>
                   </div>
                 </li>
               <% end %>
@@ -70,6 +69,9 @@
         <div class="card">
           <h5 class="card-header m-0">Documentos de <%= @pet.name%></h5>
           <div class="card-body">
+          <% if @pet.owner_records.empty? %>
+          <div class= "d-flex justify-content-center"><h5>No tienes documentos agregados para esta mascota</h5></div>
+          <% end %>
             <ul class="list-group list-group-flush">
               <% @pet.owner_records.each do |record| %>
                 <li class="list-group-item">

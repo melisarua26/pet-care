@@ -1,9 +1,13 @@
+
 <h1 class="text-center d-flex justify-content-center"></h1>
 <div id="owner_records" class="container">
   <div class="row">
+  <% if @owner_record.empty? %>
+  <div class= "d-flex justify-content-center"><h3>No tienes documentos agregados para esta mascota</h3></div>
+  <% end %>
     <% @owner_record.each do |record| %>
     <div class="col-md-6 col-lg-4">
-      <%= render 'owner_record', record: record %>
+      <%= render 'owner_record', owner_record: record %>
     </div>
     <% end %>
   </div>
